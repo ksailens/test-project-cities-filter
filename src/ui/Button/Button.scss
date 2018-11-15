@@ -1,0 +1,35 @@
+.Button {
+  width: 160px;
+  height: 55px;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #E17421;
+  color: #FFE8B6;
+  font-size: 14px;
+  cursor: pointer;
+  background: #FF6D00;
+  box-shadow: 2px 2px 2px rgba(255,219,195,.7);
+  margin-top: 11px;
+
+  &:hover {
+    background: #FF8122;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    box-shadow: inset 2px 2px 1px rgba(0,0,0,.3);
+  }
+
+  span {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
