@@ -5,11 +5,16 @@ import PropTypes from 'prop-types';
 import update from 'immutability-helper';
 
 
-const CITIES_ALL_ID = 'All'; // ключ "ВСЕ" для фильтра пересадок
+const CITIES_ALL_ID = 'Все'; // ключ "ВСЕ" для фильтра пересадок
 
 class CitiesSelector extends Component {
 
-  getCityTitleById(id) { // вывод пунктов фильтра с различными окончаниями
+	// randomFucking() { // а так нифига не получается
+	// 	const allCitiesForRender = this.getAllUniqueCitiesIds();
+	// 	return allCitiesForRender.forEach(item => item);
+	// }
+
+  getCityTitleById(id) { // так города фиксированы и вместо Каира метод выведет Пусто
     switch(id) {
       case CITIES_ALL_ID:
         return 'Все';
@@ -129,7 +134,6 @@ class CitiesSelector extends Component {
 
   renderUniqueCities() { //вывод элементов уникальных пересадок + ключ "ВСЕ"
     const uniqueCities = this.getAllUniqueCitiesIds();
-    console.log('uniq arr', uniqueCities)
     return uniqueCities.map((uniqueCity, index) => {
       return this.renderCityItem(uniqueCity, index)
     });
@@ -156,7 +160,7 @@ class CitiesSelector extends Component {
 
   render() { // оболочка для фильтра пересадок
     return (
-      <div className={'ToggleStops'}>
+      <div className={'ToggleStops mt-3'}>
         {this.renderCities()}
       </div>
     );

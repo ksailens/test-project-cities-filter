@@ -43,13 +43,13 @@ class App extends Component {
 		}
 		return tickets.filter(ticket => transfers.includes(ticket.stops)); // отобразить билеты в соотвествии с фильтром
 	}
-
+//Как Их Объединить???
   getFilteredCities(tickets) {
     const { cities } = this.state.filter;
-    if (_.isEmpty(cities)) { // вернуть полный список билетов, если ни один элемент фильтра не отмечен
+    if (_.isEmpty(cities)) {
       return tickets;
     }
-    return tickets.filter(ticket => cities.includes(ticket.destination_name)); // отобразить билеты в соотвествии с фильтром
+    return tickets.filter(ticket => cities.includes(ticket.destination_name));
   }
 
 	renderHeader() { // оболочка для хедера
@@ -73,7 +73,7 @@ class App extends Component {
 					{...this.state}
 				/>
 				<BuyTickets
-					tickets={this.getFilteredTickets(data.tickets)}
+					tickets={this.getFilteredCities(data.tickets)}
 				/>
 			</section>
 		);
